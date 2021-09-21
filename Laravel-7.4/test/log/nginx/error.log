@@ -1,0 +1,8 @@
+2021/06/08 14:28:32 [emerg] 25#25: open() "/etc/nginx/sites-enabled/default" failed (2: No such file or directory) in /etc/nginx/nginx.conf:60
+2021/06/08 14:28:45 [emerg] 26#26: open() "/etc/nginx/sites-enabled/default" failed (2: No such file or directory) in /etc/nginx/nginx.conf:60
+2021/06/08 14:29:43 [emerg] 26#26: open() "/etc/nginx/sites-enabled/default" failed (2: No such file or directory) in /etc/nginx/nginx.conf:60
+2021/06/08 14:29:46 [emerg] 25#25: open() "/etc/nginx/sites-enabled/default" failed (2: No such file or directory) in /etc/nginx/nginx.conf:60
+2021/06/08 14:29:49 [emerg] 25#25: open() "/etc/nginx/sites-enabled/default" failed (2: No such file or directory) in /etc/nginx/nginx.conf:60
+2021/06/08 14:31:41 [emerg] 26#26: open() "/etc/nginx/sites-enabled/default" failed (2: No such file or directory) in /etc/nginx/nginx.conf:60
+2021/06/08 14:31:43 [emerg] 25#25: open() "/etc/nginx/sites-enabled/default" failed (2: No such file or directory) in /etc/nginx/nginx.conf:60
+2021/06/08 14:33:59 [emerg] 25#25: open() "/etc/nginx/sites-enabled/default" failed (2: No such file or directory) in /etc/nginx/nginx.conf:60
