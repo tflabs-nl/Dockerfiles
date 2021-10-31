@@ -3,6 +3,8 @@ FROM ubuntu:hirsute
 ENV TZ=Europe/Amsterdam
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+RUN apt update && apt -y install software-properties-common && add-apt-repository ppa:ondrej/php -y
+
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
       nano \
       git \
@@ -16,7 +18,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
       cron \
       sudo \
       libzip-dev \
-	  php8.0-mbstring php8.0-xml php8.0-fpm php8.0-zip php8.0-common php8.0-fpm php8.0-cli unzip curl php8.0-curl php8.0-mysql mysql-client nginx \
+	  php8.0-mbstring php8.0-xml php8.0-fpm php8.0-zip php8.0-common php8.0-fpm php8.0-cli unzip curl php8.0-curl php8.0-mysql mysql-client nginx wget \
 	&& curl -s https://getcomposer.org/installer | php8.0 \
 	&& mv composer.phar /usr/local/bin/composer \
     && rm -rf /var/www/html \
@@ -35,6 +37,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 	&& sed -i "s|post_max_size = 8M|post_max_size = 128M |g" /etc/php/8.0/fpm/php.ini \
 	&& sed -i "s|upload_max_filesize = 2M|upload_max_filesize = 100M |g" /etc/php/8.0/fpm/php.ini
 
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt update && apt install -y ./google-chrome-stable_current_amd64.deb
 
 COPY entrypoint.sh /usr/local/bin/
 

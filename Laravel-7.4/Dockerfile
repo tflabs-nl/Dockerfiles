@@ -16,7 +16,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
       cron \
       sudo \
       libzip-dev \
-	  php-mbstring php-xml php-fpm php-zip php-common php-fpm php-cli unzip curl php-curl php-mysql mysql-client nginx \
+	  php-mbstring php-xml php-fpm php-zip php-common php-fpm php-cli unzip curl php-curl php-mysql mysql-client nginx wget \
 	&& curl -s https://getcomposer.org/installer | php \
 	&& mv composer.phar /usr/local/bin/composer \
     && rm -rf /var/www/html \
@@ -35,6 +35,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 	&& sed -i "s|post_max_size = 8M|post_max_size = 128M |g" /etc/php/7.4/fpm/php.ini \
 	&& sed -i "s|upload_max_filesize = 2M|upload_max_filesize = 100M |g" /etc/php/7.4/fpm/php.ini
 
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt update && apt install -y ./google-chrome-stable_current_amd64.deb
 
 COPY entrypoint.sh /usr/local/bin/
 
