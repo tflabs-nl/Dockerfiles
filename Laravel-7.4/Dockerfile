@@ -40,13 +40,14 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
 COPY entrypoint.sh /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/entrypoint.sh
+
+RUN sed -i -e 's/\r$//' /usr/local/bin/entrypoint.sh
 	
 VOLUME ["/etc/nginx/sites-available", "/var/www", "/var/log/nginx"]
 
 ENTRYPOINT ["entrypoint.sh"]
 
 CMD ["sh"]
-
 
 EXPOSE 80
 EXPOSE 443
