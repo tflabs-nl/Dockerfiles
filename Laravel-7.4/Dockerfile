@@ -47,5 +47,6 @@ ENTRYPOINT ["entrypoint.sh"]
 
 CMD ["sh"]
 
+
 EXPOSE 80
 EXPOSE 443
